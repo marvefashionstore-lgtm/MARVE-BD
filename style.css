@@ -362,7 +362,48 @@ header {
   padding: 0;
 
   background-repeat: no-repeat;
+   
+let currentSlide = 0;
+let slideTimer;
 
+function showSlide(index) {
+  const slides = document.querySelectorAll(".hero-slide");
+  const dots = document.querySelectorAll(".dot");
+
+  if (!slides.length) return;
+
+  currentSlide = (index + slides.length) % slides.length;
+
+  slides.forEach((slide, i) => {
+    slide.classList.toggle("active", i === currentSlide);
+  });
+
+  dots.forEach((dot, i) => {
+    dot.classList.toggle("active", i === currentSlide);
+  });
+}
+
+function changeSlide(direction) {
+  showSlide(currentSlide + direction);
+  restartAutoSlide();
+}
+
+function startAutoSlide() {
+  clearInterval(slideTimer);
+
+  slideTimer = setInterval(() => {
+    showSlide(currentSlide + 1);
+  }, 4000); // প্রতি 4 সেকেন্ডে slide
+}
+
+function restartAutoSlide() {
+  startAutoSlide();
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  showSlide(0);
+  startAutoSlide();
+});
   /*
     তোমার uploaded banner-এর জন্য
     center crop-এর বদলে center রাখা হয়েছে।
@@ -2805,3 +2846,27 @@ footer li,
   }
 
 }
+let touchStartX = 0;
+let touchEndX = 0;
+
+const hero = document.querySelector(".hero");
+
+if (hero) {
+  hero.addEventListener("touchstart", function (e) {
+    touchStartX = e.changedTouches[0].screenX;
+  }, { passive: true });
+
+  hero.addEventListener("touchend", function (e) {
+    touchEndX = e.changedTouches[0].screenX;
+
+    const difference = touchStartX - touchEndX;
+
+    if (Math.abs(difference) > 50) {
+      if (difference > 0) {
+        changeSlide(1);
+      } else {
+        changeSlide(-1);
+      }
+    }
+  }, { passive: true });
+  }
