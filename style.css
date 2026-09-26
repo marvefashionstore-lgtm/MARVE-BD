@@ -439,7 +439,86 @@ document.addEventListener("DOMContentLoaded", function () {
   display: none;
 }
 
+.hero {
+  position: relative;
+  overflow: hidden;
+}
 
+.hero-slide {
+  display: none;
+  position: relative;
+  width: 100%;
+  min-height: 420px;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hero-slide.active {
+  display: flex;
+  align-items: center;
+}
+
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+
+  width: 42px;
+  height: 42px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: rgba(255,255,255,0.9);
+  color: #111;
+
+  font-size: 30px;
+  line-height: 42px;
+
+  cursor: pointer;
+}
+
+.slider-btn.prev {
+  left: 15px;
+}
+
+.slider-btn.next {
+  right: 15px;
+}
+
+.dots {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  display: flex;
+  gap: 8px;
+
+  z-index: 10;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+
+  background: rgba(255,255,255,0.6);
+
+  cursor: pointer;
+}
+
+.dot.active {
+  width: 28px;
+  border-radius: 10px;
+  background: white;
+   }
 /* =========================================================
    SLIDER BUTTON
    ========================================================= */
