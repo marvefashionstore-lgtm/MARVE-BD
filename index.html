@@ -383,5 +383,109 @@
 <div class="toast" id="toast"></div>
 
 <script src="script.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  const slides = document.querySelectorAll(".hero-slide");
+  const dots = document.querySelectorAll(".dot");
+
+  let currentSlide = 0;
+  let autoSlideTimer = null;
+
+  function showSlide(index) {
+    if (!slides.length) return;
+
+    // Loop slides
+    if (index >= slides.length) {
+      index = 0;
+    }
+
+    if (index < 0) {
+      index = slides.length - 1;
+    }
+
+    currentSlide = index;
+
+    slides.forEach((slide, i) => {
+      slide.classList.remove("active");
+
+      if (i === currentSlide) {
+        slide.classList.add("active");
+      }
+    });
+
+    dots.forEach((dot, i) => {
+      dot.classList.remove("active");
+
+      if (i === currentSlide) {
+        dot.classList.add("active");
+      }
+    });
+  }
+
+  window.showSlide = function (index) {
+    showSlide(index);
+    restartAutoSlide();
+  };
+
+  window.changeSlide = function (direction) {
+    showSlide(currentSlide + direction);
+    restartAutoSlide();
+  };
+
+  function startAutoSlide() {
+    clearInterval(autoSlideTimer);
+
+    autoSlideTimer = setInterval(function () {
+      showSlide(currentSlide + 1);
+    }, 4000);
+  }
+
+  function restartAutoSlide() {
+    startAutoSlide();
+  }
+
+  // Start slider
+  showSlide(0);
+  startAutoSlide();
+
+
+  // =========================
+  // MOBILE SWIPE
+  // =========================
+
+  const hero = document.querySelector(".hero");
+
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  if (hero) {
+
+    hero.addEventListener("touchstart", function (e) {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    hero.addEventListener("touchend", function (e) {
+      touchEndX = e.changedTouches[0].screenX;
+
+      const distance = touchStartX - touchEndX;
+
+      if (Math.abs(distance) > 50) {
+
+        if (distance > 0) {
+          changeSlide(1);
+        } else {
+          changeSlide(-1);
+        }
+
+      }
+    }, { passive: true });
+
+  }
+
+});
+</script>
+
 </body>
 </html>
