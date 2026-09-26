@@ -1365,3 +1365,119 @@ section:has(.hero) {
         height: 100% !important;
     }
 }
+/* ==========================================
+   MARVE HERO - REMOVE SECTION PADDING
+   ========================================== */
+
+/* Hero section must touch header */
+.hero {
+    width: calc(100% + 8%) !important;
+    max-width: none !important;
+
+    /* escape the 4% left/right section padding */
+    margin-left: -4% !important;
+    margin-right: -4% !important;
+
+    /* escape the 55px top/bottom section padding */
+    margin-top: -55px !important;
+    margin-bottom: -55px !important;
+
+    height: clamp(320px, 34.05vw, 523px) !important;
+
+    padding: 0 !important;
+    position: relative !important;
+    overflow: hidden !important;
+
+    background: #ead8c8;
+}
+
+/* Slider */
+.hero-slide {
+    width: 100% !important;
+    height: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+
+    border: 0 !important;
+}
+
+/* Active slide */
+.hero-slide.active {
+    display: flex !important;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+/* If image is an actual <img> */
+.hero-slide img {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: none !important;
+
+    display: block !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+
+    object-fit: cover !important;
+    object-position: center center !important;
+}
+
+
+/* ==========================================
+   MOBILE
+   ========================================== */
+
+@media (max-width:768px) {
+
+    .hero {
+        width: calc(100% + 8%) !important;
+
+        margin-left: -4% !important;
+        margin-right: -4% !important;
+
+        margin-top: -40px !important;
+        margin-bottom: -40px !important;
+
+        height: 320px !important;
+
+        padding: 0 !important;
+        overflow: hidden !important;
+    }
+
+    .hero-slide {
+        width: 100% !important;
+        height: 100% !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        background-size: cover !important;
+        background-position: center center !important;
+    }
+
+    .hero-slide img {
+        width: 100% !important;
+        height: 100% !important;
+
+        object-fit: cover !important;
+        object-position: center center !important;
+    }
+}
+
+
+/* ==========================================
+   SMALL MOBILE
+   ========================================== */
+
+@media (max-width:400px) {
+
+    .hero {
+        height: 300px !important;
+    }
+}
