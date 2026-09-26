@@ -1259,3 +1259,109 @@ footer a:hover{
         object-fit:cover !important;
     }
 }
+/* =====================================================
+   MARVE - FULL WIDTH HERO SLIDER FIX
+   ===================================================== */
+
+/* Remove section padding around the hero */
+section:has(.hero) {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+/* Full width hero */
+.hero {
+    width: 100% !important;
+    max-width: none !important;
+    height: clamp(320px, 34.05vw, 523px) !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    position: relative;
+    background: #ead8c8;
+}
+
+/* Slides */
+.hero-slide {
+    width: 100% !important;
+    height: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+}
+
+/* Active slide */
+.hero-slide.active {
+    width: 100% !important;
+    height: 100% !important;
+    display: flex;
+}
+
+/* If slider uses IMG instead of background image */
+.hero-slide img {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    object-fit: cover !important;
+    object-position: center center !important;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+    section:has(.hero) {
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    .hero {
+        width: 100% !important;
+        height: 320px !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .hero-slide {
+        width: 100% !important;
+        height: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        background-size: cover !important;
+        background-position: center center !important;
+    }
+
+    .hero-slide img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        object-position: center center !important;
+    }
+}
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 400px) {
+
+    .hero {
+        width: 100% !important;
+        height: 300px !important;
+    }
+
+    .hero-slide {
+        width: 100% !important;
+        height: 100% !important;
+    }
+}
