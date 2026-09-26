@@ -1202,3 +1202,60 @@ footer a:hover{
         gap:10px;
     }
 }
+/* =====================================================
+   FORCE HERO SLIDER IMAGE FULL WIDTH
+   ===================================================== */
+
+.hero,
+.hero-slide{
+    width:100% !important;
+    max-width:100% !important;
+    margin:0 !important;
+    padding:0 !important;
+    overflow:hidden !important;
+}
+
+.hero-slide img{
+    display:block !important;
+    width:100% !important;
+    max-width:100% !important;
+    height:100% !important;
+    min-width:100% !important;
+    min-height:100% !important;
+    margin:0 !important;
+    padding:0 !important;
+    border:0 !important;
+    object-fit:cover !important;
+    object-position:center !important;
+}
+
+.hero-slide.active{
+    width:100% !important;
+    height:100% !important;
+    margin:0 !important;
+    padding:0 !important;
+}
+
+@media(max-width:768px){
+    .hero{
+        width:100% !important;
+        height:320px !important;
+        margin:0 !important;
+        padding:0 !important;
+    }
+
+    .hero-slide{
+        width:100% !important;
+        height:100% !important;
+        padding:0 !important;
+        margin:0 !important;
+    }
+
+    .hero-slide img{
+        width:100% !important;
+        height:100% !important;
+        min-width:100% !important;
+        min-height:100% !important;
+        object-fit:cover !important;
+    }
+}
