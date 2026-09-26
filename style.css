@@ -2949,3 +2949,31 @@ if (hero) {
     }
   }, { passive: true });
   }
+@media (max-width: 768px) {
+
+  .hero-slide {
+    min-height: 460px;
+
+    background-size: cover;
+    background-position: center;
+  }
+
+  .slider-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 26px;
+  }
+
+  .slider-btn.prev {
+    left: 10px;
+  }
+
+  .slider-btn.next {
+    right: 10px;
+  }
+
+  .dots {
+    bottom: 15px;
+  }
+
+}
