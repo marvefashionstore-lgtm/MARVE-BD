@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="MARVE — traditional jewellery, churi, lingerie, watches and earrings.">
+<title>MARVE | Fashion & Lifestyle</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="announcement">Welcome to MARVE — Find your everyday elegance ✨</div>
+<header class="header">
+  <a class="brand" href="#"><span class="brand-icon">M</span><span>MARVE<small>STYLE YOUR STORY</small></span></a>
+  <nav><a href="#home">Home</a><a href="#collections">Collections</a><a href="#shop">Shop</a><a href="#about">About</a></nav>
+  <div class="actions"><input id="searchInput" type="search" placeholder="Search products..."><button id="cartOpen" class="cart-button">Bag <span id="cartCount">0</span></button></div>
+</header>
+<main>
+<section class="hero" id="home">
+  <div class="hero-text"><p class="eyebrow">THE MARVE EDIT</p><h1>Tradition meets<br><em>your style.</em></h1><p>Discover beautiful details for every moment — from traditional Indian jewellery to everyday essentials.</p><a class="button" href="#shop">Shop the collection ↗</a></div>
+  <div class="hero-photo"><img src="assets/indian-traditional-jewellery-set.png" alt="Indian traditional jewellery set"><div class="hero-label">Timeless beauty<br><small>Curated with care</small></div></div>
+</section>
+<section class="benefits"><div>✧ <b>Curated styles</b></div><div>♡ <b>Everyday essentials</b></div><div>↗ <b>Easy WhatsApp ordering</b></div></section>
+<section class="section" id="collections"><div class="section-title"><p class="eyebrow">EXPLORE MARVE</p><h2>Shop by <em>collection</em></h2></div>
+<div class="categories">
+<button class="category cat-jewellery" data-category="Indian Traditional Jewellery Set"><span>01 / TRADITIONAL</span><b>Indian Traditional<br>Jewellery Set ↗</b></button>
+<button class="category cat-churi" data-category="Churi"><span>02 / COLOURFUL</span><b>Kashmiri Churi ↗</b></button>
+<button class="category cat-bra" data-category="Bra"><span>03 / EVERYDAY</span><b>Bra ↗</b></button>
+<button class="category cat-panty" data-category="Panty"><span>04 / COMFORT</span><b>Panty ↗</b></button>
+<button class="category cat-watch" data-category="Watch"><span>05 / TIMELESS</span><b>Watch ↗</b></button>
+<button class="category cat-earrings" data-category="Earrings"><span>06 / DETAILS</span><b>Earrings ↗</b></button>
+</div></section>
+<section class="section shop" id="shop"><div class="section-title"><p class="eyebrow">THE CURRENT COLLECTION</p><h2>Our <em>products</em></h2></div>
+<div class="filters" id="filters"><button class="active" data-category="All">All products</button><button data-category="Indian Traditional Jewellery Set">Jewellery Set</button><button data-category="Churi">Churi</button><button data-category="Bra">Bra</button><button data-category="Panty">Panty</button><button data-category="Watch">Watch</button><button data-category="Earrings">Earrings</button></div>
+<div id="productGrid" class="products"></div><p id="empty" class="empty" hidden>No products found. Try another search or category.</p>
+</section>
+<section class="about" id="about"><div><p class="eyebrow">A LITTLE ABOUT US</p><h2>Small details.<br><em>Personal style.</em></h2><p>MARVE brings together traditional beauty and everyday favourites in one place. Find something that feels uniquely you.</p><a href="#shop" class="button light">Explore products ↗</a></div></section>
+<section class="contact"><p class="eyebrow">READY TO FIND YOUR FAVOURITE?</p><h2>Order directly with <em>MARVE.</em></h2><p>Choose your products and send your order through WhatsApp.</p><a id="contactWhatsApp" class="button" target="_blank" rel="noopener">Chat on WhatsApp ↗</a></section>
+</main>
+<footer><a class="brand footer-brand" href="#"><span class="brand-icon">M</span><span>MARVE<small>STYLE YOUR STORY</small></span></a><p>Find beauty in the everyday.</p><small>© <span id="year"></span> MARVE. All rights reserved.</small></footer>
+<div id="overlay" class="overlay"></div>
+<aside id="cartDrawer" class="drawer" aria-hidden="true"><div class="drawer-head"><div><p class="eyebrow">YOUR SELECTION</p><h2>Your bag (<span id="bagCount">0</span>)</h2></div><button id="cartClose" class="close">×</button></div><div id="cartItems" class="cart-items"></div><div id="cartEmpty" class="cart-empty"><h3>Your bag is waiting</h3><p>Add a product to get started.</p></div><div id="cartFooter" class="cart-footer"><p>Subtotal <strong id="subtotal">৳0</strong></p><small>Delivery charge will be confirmed separately.</small><button id="checkout" class="button checkout">Order via WhatsApp ↗</button></div></aside>
+<div id="toast" class="toast"></div>
+<script src="script.js"></script>
+</body></html>
